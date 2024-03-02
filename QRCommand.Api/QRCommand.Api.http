@@ -1,0 +1,6 @@
+@QRCommand.Api_HostAddress = http://localhost:5083
+
+POST {{QRCommand.Api_HostAddress}}/api/QrCode/
+Accept: application/json
+
+###
