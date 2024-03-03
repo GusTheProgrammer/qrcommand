@@ -4,52 +4,54 @@
         <name>QRCommand.Api</name>
     </assembly>
     <members>
-        <member name="M:QRCommand.Api.Controllers.QrCodeController.CreateQrCode(QRCommand.Api.Models.QrCodeRequest)">
-             <summary>
-             Generates a QR code for a given text.
-             </summary>
-             <remarks>
-             Sample request:
+        <member name="M:QRCommand.Api.Controllers.QRCodeGeneratorController.CreateQrCode(QRCommand.Api.Models.QRCodeGeneratorRequest,QRCommand.Api.Models.RenderType)">
+            <summary>
+            Generates a QR code for a given text.
+            </summary>
+            <remarks>
+            Sample request:
             
-                 POST /api/QrCode/create
-                 {
-                    "plainText": "Hello, World!",
-                    "eccLevel": "Q",
-                    "forceUtf8": false,
-                    "utf8BOM": false,
-                    "eciMode": "Default",
-                    "requestedVersion": -1
-                 }
+                POST /api/QrCode/create
+                {
+                   "plainText": "Hello, World!",
+                   "eccLevel": "Q",
+                   "forceUtf8": false,
+                   "utf8BOM": false,
+                   "eciMode": "Default",
+                   "requestedVersion": -1
+                }
             
-             This endpoint creates a QR code based on plain text input.
-             </remarks>
-             <param name="request">The QR code generation request details.</param>
-             <returns>Returns a QR code image for the given text.</returns>
-             <response code="200">Returns the QR code image</response>
-             <response code="400">If the request is invalid</response>
+            This endpoint creates a QR code based on plain text input.
+            </remarks>
+            <param name="generatorRequest">The QR code generation request details.</param>
+            <param name="renderType">The QR code output type</param>
+            <returns>Returns a QR code image for the given text.</returns>
+            <response code="200">Returns the QR code image</response>
+            <response code="400">If the request is invalid</response>
         </member>
-        <member name="M:QRCommand.Api.Controllers.QrCodeController.CreateWifiQrCode(QRCommand.Api.Models.Payloads.WiFiPayload)">
-             <summary>
-             Generates a QR code for connecting to a WiFi network.
-             </summary>
-             <remarks>
-             Sample request:
+        <member name="M:QRCommand.Api.Controllers.QRCodeGeneratorController.CreateWifiQrCode(QRCommand.Api.Models.Payloads.WiFiPayload,QRCommand.Api.Models.RenderType)">
+            <summary>
+            Generates a QR code for connecting to a WiFi network.
+            </summary>
+            <remarks>
+            Sample request:
             
-                 POST /api/QrCode/create/wifi
-                 {
-                    "ssid": "MyWiFiNetwork",
-                    "password": "MySecretPassword",
-                    "isWPA": true
-                 }
+                POST /api/QrCode/create/wifi
+                {
+                   "ssid": "MyWiFiNetwork",
+                   "password": "MySecretPassword",
+                   "isWPA": true
+                }
             
-             This endpoint creates a QR code that, when scanned, connects a device to the specified WiFi network.
-             </remarks>
-             <param name="request">The WiFi connection details.</param>
-             <returns>Returns a QR code image for WiFi connection.</returns>
-             <response code="200">Returns the QR code image</response>
-             <response code="400">If the request is invalid</response>
+            This endpoint creates a QR code that, when scanned, connects a device to the specified WiFi network.
+            </remarks>
+            <param name="request">The WiFi connection details.</param>
+            <param name="renderType">The QR code output type</param>
+            <returns>Returns a QR code image for WiFi connection.</returns>
+            <response code="200">Returns the QR code image</response>
+            <response code="400">If the request is invalid</response>
         </member>
-        <member name="M:QRCommand.Api.Controllers.QrCodeController.CreateUrlQrCode(QRCommand.Api.Models.Payloads.UrlPayload)">
+        <member name="M:QRCommand.Api.Controllers.QRCodeGeneratorController.CreateUrlQrCode(QRCommand.Api.Models.Payloads.UrlPayload,QRCommand.Api.Models.RenderType)">
              <summary>
              Generates a QR code for a URL.
              </summary>
@@ -64,11 +66,12 @@
              This endpoint creates a QR code that, when scanned, directs to the specified URL.
              </remarks>
              <param name="request">The URL details.</param>
+                 /// <param name="renderType">The QR code output type</param>
              <returns>Returns a QR code image for the URL.</returns>
              <response code="200">Returns the QR code image</response>
              <response code="400">If the request is invalid</response>
         </member>
-        <member name="M:QRCommand.Api.Controllers.QrCodeController.CreateEmailQrCode(QRCommand.Api.Models.Payloads.EmailPayload)">
+        <member name="M:QRCommand.Api.Controllers.QRCodeGeneratorController.CreateEmailQrCode(QRCommand.Api.Models.Payloads.EmailPayload,QRCommand.Api.Models.RenderType)">
              <summary>
              Generates a QR code for an email message.
              </summary>
@@ -85,11 +88,12 @@
              This endpoint creates a QR code that, when scanned, prepares an email with the specified recipient, subject, and message.
              </remarks>
              <param name="request">The email details to encode.</param>
+             <param name="renderType">The QR code output type</param>
              <returns>Returns a QR code image containing the email information.</returns>
              <response code="200">Returns the QR code image</response>
              <response code="400">If the request is invalid</response>
         </member>
-        <member name="M:QRCommand.Api.Controllers.QrCodeController.CreateWhatsAppQrCode(QRCommand.Api.Models.Payloads.WhatsAppMessagePayload)">
+        <member name="M:QRCommand.Api.Controllers.QRCodeGeneratorController.CreateWhatsAppQrCode(QRCommand.Api.Models.Payloads.WhatsAppMessagePayload,QRCommand.Api.Models.RenderType)">
              <summary>
              Generates a QR code for an email message.
              </summary>
@@ -105,12 +109,13 @@
             
              This endpoint creates a QR code that, when scanned, prepares an email with the specified recipient, subject, and message.
              </remarks>
+             <param name="renderType">The QR code output type</param>
              <param name="request">The email details to encode.</param>
              <returns>Returns a QR code image containing the email information.</returns>
              <response code="200">Returns the QR code image</response>
              <response code="400">If the request is invalid</response>
         </member>
-        <member name="M:QRCommand.Api.Controllers.QrCodeController.CreateVCardQrCode(QRCommand.Api.Models.Payloads.VCardPayload)">
+        <member name="M:QRCommand.Api.Controllers.QRCodeGeneratorController.CreateVCardQrCode(QRCommand.Api.Models.Payloads.VCardPayload,QRCommand.Api.Models.RenderType)">
              <summary>
              Generates a QR code for a vCard.
              </summary>
@@ -126,12 +131,13 @@
             
              This endpoint creates a QR code that, when scanned, imports the specified contact information into the device's address book.
              </remarks>
+             <param name="renderType">The QR code output type</param>
              <param name="request">The vCard details.</param>
              <returns>Returns a QR code image containing the vCard information.</returns>
              <response code="200">Returns the QR code image</response>
              <response code="400">If the request is invalid</response>
         </member>
-        <member name="M:QRCommand.Api.Controllers.QrCodeController.CreateSmsQrCode(QRCommand.Api.Models.Payloads.SmsPayload)">
+        <member name="M:QRCommand.Api.Controllers.QRCodeGeneratorController.CreateSmsQrCode(QRCommand.Api.Models.Payloads.SmsPayload,QRCommand.Api.Models.RenderType)">
              <summary>
              Generates a QR code for sending an SMS.
              </summary>
@@ -146,12 +152,13 @@
             
              This endpoint creates a QR code that, when scanned, prepares an SMS to the specified phone number with the given message.
              </remarks>
+             <param name="renderType">The QR code output type</param>
              <param name="request">The SMS message details.</param>
              <returns>Returns a QR code image for sending an SMS.</returns>
              <response code="200">Returns the QR code image</response>
              <response code="400">If the request is invalid</response>
         </member>
-        <member name="M:QRCommand.Api.Controllers.QrCodeController.CreateCalendarEventQrCode(QRCommand.Api.Models.Payloads.CalendarEventPayload)">
+        <member name="M:QRCommand.Api.Controllers.QRCodeGeneratorController.CreateCalendarEventQrCode(QRCommand.Api.Models.Payloads.CalendarEventPayload,QRCommand.Api.Models.RenderType)">
              <summary>
              Generates a QR code for a calendar event.
              </summary>
@@ -171,12 +178,13 @@
             
              This endpoint creates a QR code that, when scanned, adds a calendar event with the specified details.
              </remarks>
+             <param name="renderType">The QR code output type</param>
              <param name="request">The calendar event details.</param>
              <returns>Returns a QR code image containing the calendar event information.</returns>
              <response code="200">Returns the QR code image</response>
              <response code="400">If the request is invalid</response>
         </member>
-        <member name="M:QRCommand.Api.Controllers.QrCodeController.CreateBookmarkQrCode(QRCommand.Api.Models.Payloads.BookmarkPayload)">
+        <member name="M:QRCommand.Api.Controllers.QRCodeGeneratorController.CreateBookmarkQrCode(QRCommand.Api.Models.Payloads.BookmarkPayload,QRCommand.Api.Models.RenderType)">
              <summary>
              Generates a QR code for a bookmark.
              </summary>
@@ -191,12 +199,13 @@
             
              This endpoint creates a QR code that, when scanned, saves a bookmark to the specified URL with the given title.
              </remarks>
+             <param name="renderType">The QR code output type</param>
              <param name="request">The bookmark details.</param>
              <returns>Returns a QR code image for the bookmark.</returns>
              <response code="200">Returns the QR code image</response>
              <response code="400">If the request is invalid</response>
         </member>
-        <member name="M:QRCommand.Api.Controllers.QrCodeController.CreateCryptoPaymentQrCode(QRCommand.Api.Models.Payloads.CryptoCurrencyPaymentPayload)">
+        <member name="M:QRCommand.Api.Controllers.QRCodeGeneratorController.CreateCryptoPaymentQrCode(QRCommand.Api.Models.Payloads.CryptoCurrencyPaymentPayload,QRCommand.Api.Models.RenderType)">
              <summary>
              Generates a QR code for a crypto currency payment address.
              </summary>
@@ -214,12 +223,13 @@
             
              This endpoint creates a QR code that, when scanned, initiates a payment to the specified crypto currency address.
              </remarks>
+             <param name="renderType">The QR code output type</param>
              <param name="request">The crypto currency payment details.</param>
              <returns>Returns a QR code image for the crypto currency payment.</returns>
              <response code="200">Returns the QR code image</response>
              <response code="400">If the request is invalid</response>
         </member>
-        <member name="M:QRCommand.Api.Controllers.QrCodeController.CreateGeolocationQrCode(QRCommand.Api.Models.Payloads.GeolocationPayload)">
+        <member name="M:QRCommand.Api.Controllers.QRCodeGeneratorController.CreateGeolocationQrCode(QRCommand.Api.Models.Payloads.GeolocationPayload,QRCommand.Api.Models.RenderType)">
              <summary>
              Generates a QR code for a geolocation.
              </summary>
@@ -235,12 +245,13 @@
             
              This endpoint creates a QR code that, when scanned, shows a location on the map.
              </remarks>
+             <param name="renderType">The QR code output type</param>
              <param name="request">The geolocation details.</param>
              <returns>Returns a QR code image for the geolocation.</returns>
              <response code="200">Returns the QR code image</response>
              <response code="400">If the request is invalid</response>
         </member>
-        <member name="M:QRCommand.Api.Controllers.QrCodeController.CreateGirocodeQrCode(QRCommand.Api.Models.Payloads.GirocodePayload)">
+        <member name="M:QRCommand.Api.Controllers.QRCodeGeneratorController.CreateGirocodeQrCode(QRCommand.Api.Models.Payloads.GirocodePayload,QRCommand.Api.Models.RenderType)">
              <summary>
              Generates a QR code for a girocode (SEPA payment).
              </summary>
@@ -263,10 +274,73 @@
             
              This endpoint creates a QR code for a SEPA payment with the specified details.
              </remarks>
+             <param name="renderType">The QR code output type</param>
              <param name="request">The girocode payment details.</param>
              <returns>Returns a QR code image for the SEPA payment.</returns>
              <response code="200">Returns the QR code image</response>
              <response code="400">If the request is invalid</response>
+        </member>
+        <member name="T:QRCommand.Api.Dtos.QrCodesDto">
+            <summary>
+            DTO for creating or updating a QR code.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Dtos.QrCodesDto.Content">
+            <summary>
+            The content of the QR code.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Dtos.QrCodesDto.IsPublic">
+            <summary>
+            Indicates whether the QR code is public.
+            </summary>
+        </member>
+        <member name="T:QRCommand.Api.Dtos.QrCodesResponseDto">
+            <summary>
+            DTO for QR code response.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Dtos.QrCodesResponseDto.Id">
+            <summary>
+            The ID of the QR code.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Dtos.QrCodesResponseDto.Content">
+            <summary>
+            The content of the QR code.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Dtos.QrCodesResponseDto.IsPublic">
+            <summary>
+            Indicates whether the QR code is public.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Dtos.QrCodesResponseDto.UserId">
+            <summary>
+            The ID of the user who owns the QR code.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Dtos.QrCodesResponseDto.CreatedAt">
+            <summary>
+            The creation date and time of the QR code.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Dtos.QrCodesResponseDto.UpdatedAt">
+            <summary>
+            The last update date and time of the QR code.
+            </summary>
+        </member>
+        <member name="T:QRCommand.Api.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:QRCommand.Api.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:QRCommand.Api.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:QRCommand.Api.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
         </member>
         <member name="T:QRCommand.Api.Models.Payloads.BookmarkPayload">
             <summary>
@@ -532,6 +606,58 @@
             <summary>
             Indicates whether the network uses WPA/WPA2 security.
             </summary>
+        </member>
+        <member name="T:QRCodesController">
+            <summary>
+            Handles CRUD operations for QR codes.
+            </summary>
+        </member>
+        <member name="M:QRCodesController.CreateQRCode(QRCommand.Api.Dtos.QrCodesDto)">
+            <summary>
+            Creates a new QR code.
+            </summary>
+            <param name="qrCodesDto">The QR code data.</param>
+            <returns>The created QR code.</returns>
+            <response code="201">Returns the newly created QR code</response>
+            <response code="401">If the user is not authenticated</response>
+        </member>
+        <member name="M:QRCodesController.GetQRCode(System.Guid)">
+            <summary>
+            Retrieves a QR code by ID. Public QR codes are accessible without authentication.
+            </summary>
+            <param name="id">The ID of the QR code.</param>
+            <returns>The requested QR code if found.</returns>
+            <response code="200">Returns the requested QR code</response>
+            <response code="404">If the QR code is not found or not accessible</response>
+        </member>
+        <member name="M:QRCodesController.GetAllQRCodes">
+            <summary>
+            Retrieves all QR codes for the authenticated user.
+            </summary>
+            <returns>A list of QR codes owned by the user.</returns>
+            <response code="200">Returns the list of QR codes</response>
+            <response code="401">If the user is not authenticated</response>
+        </member>
+        <member name="M:QRCodesController.UpdateQRCode(System.Guid,QRCommand.Api.Dtos.QrCodesDto)">
+            <summary>
+            Updates an existing QR code.
+            </summary>
+            <param name="id">The ID of the QR code to update.</param>
+            <param name="qrCodesDto">The updated QR code data.</param>
+            <returns>A status indicating the result of the update operation.</returns>
+            <response code="204">If the QR code was successfully updated</response>
+            <response code="401">If the user is not authenticated</response>
+            <response code="404">If the QR code is not found or not owned by the user</response>
+        </member>
+        <member name="M:QRCodesController.DeleteQRCode(System.Guid)">
+            <summary>
+            Deletes a QR code.
+            </summary>
+            <param name="id">The ID of the QR code to delete.</param>
+            <returns>A status indicating the result of the delete operation.</returns>
+            <response code="204">If the QR code was successfully deleted</response>
+            <response code="401">If the user is not authenticated</response>
+            <response code="404">If the QR code is not found or not owned by the user</response>
         </member>
     </members>
 </doc>

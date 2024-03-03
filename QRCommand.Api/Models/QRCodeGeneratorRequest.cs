@@ -4,7 +4,16 @@ namespace QRCommand.Api.Models;
 
 using QRCoder;
 
-public class QrCodeRequest
+public enum RenderType
+{
+    Image,
+    Svg,
+    Base64,
+    Ascii,
+    Pdf
+}
+
+public class QRCodeGeneratorRequest
 {
     [Required(ErrorMessage = "PlainText is required")]
     public string PlainText { get; set; }

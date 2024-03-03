@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QRCommand.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a11e649be9c2e731a1c598a96c81f1bb1749b44")]
 [assembly: System.Reflection.AssemblyProductAttribute("QRCommand.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QRCommand.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

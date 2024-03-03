@@ -67,3 +67,37 @@ g
 ,QRCommand.Api/Models/Payloads/WiFiPayload.cs,7\a\7a043a1ea3cf21e093496bf77c19a8a60c73d68b
 [
 +QRCommand.Api/Models/Payloads/SmsPayload.cs,d\3\d33e3c980379ecb2fb17f5b250271c78c33acba7
+U
+%QRCommand.Api/Models/RenderOptions.cs,c\8\c89e1d0ffaba57fbe42abc3bd00e8d88969b9482
+f
+6QRCommand.Api/Controllers/QRCodeGeneratorController.cs,1\0\10a0bfe1c2bd1cbdcda39061211862ba82c0482c
+^
+.QRCommand.Api/Controllers/QRCodesController.cs,c\6\c6079e02ca67e3cbb8fdb33ae5b8b4496d2a6702
+O
+QRCommand.Api/Dtos/QrCodeDto.cs,9\5\95f248eb3fe7aa562a154c284dead50527074e50
+X
+(QRCommand.Api/Services/IQrCodeService.cs,0\f\0f5fce61c1d5197e48659b65216a28b66d9974b2
+W
+'QRCommand.Api/Services/QrCodeService.cs,a\7\a774bf69ccd4bc85fbb68d026adb10a8bf4cb147
+W
+'QRCommand.Api/Dtos/QrCodeResponseDto.cs,3\2\32e2455b6a53aae9edf2f5eacb1625327bafb35d
+P
+ QRCommand.Api/Models/QRCodeDb.cs,d\1\d1f53c16f9dd7021393c23e609088a240d14b6f3
+^
+.QRCommand.Api/Models/QRCodeGeneratorRequest.cs,1\5\15884db40b4390c8c71900aa162cb10af85f7274
+T
+$QRCommand.Api/Models/QRCodeSchema.cs,e\e\eef20c66739003aff38736b599861483bf4fa0b7
+a
+1QRCommand.Api/Services/IQrCodeGeneratorService.cs,1\6\16c93bb32fe4ae8e2f461b725f8ed560db81f0cd
+`
+0QRCommand.Api/Services/QrCodeGeneratorService.cs,5\c\5cbf88c43dc50bec944c3d11302b3a4022507f85
+P
+ QRCommand.Api/Dtos/QrCodesDto.cs,d\b\dbc595180a422f682cdeb5d2c38abf692f42bcbd
+h
+8QRCommand.Api/Migrations/20240303105821_InitialCreate.cs,f\c\fce7980c74524295d78c70f666ba7bfdd3450ceb
+m
+=QRCommand.Api/Migrations/ApplicationDbContextModelSnapshot.cs,2\f\2f042d5b22baa21e1549d44a8e99ef50a2589ccc
+X
+(QRCommand.Api/Dtos/QrCodesResponseDto.cs,e\f\ef93d5d33c49ad6e4cc97d7cf31c160d8347376d
+^
+.QRCommand.Api/Models/QrCodeGenerationResult.cs,b\a\bac8f880317c64a791472cb3a02dfa465b0d4be9
