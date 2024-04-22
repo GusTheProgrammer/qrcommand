@@ -10,30 +10,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="804e1b98-9c08-40a6-941d-56b6ed4c079d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/5/8/58cf324332d82699b759c75731eeb1f04d75e1ca" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/5/8/58cf324332d82699b759c75731eeb1f04d75e1ca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/8/0/806af259540bdbd8ea1a390fcea737b812797b7f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/8/0/806af259540bdbd8ea1a390fcea737b812797b7f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/1/3/13d1751a3d2e17e261a1b7857fae50bee30e1585" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/3/0/3094e3e8e72bceb5c6b864763ab6ef166007d43c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/3/0/30a9f695694d125652023001de07e63634b5e440" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/3/1/315116a2c8dcf3d2f32771af5308684ac3febd32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/3/f/3f413b9b0ffde544846b9b9d85d680950ff27328" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/4/f/4fc23bf432a0cc1c11eb04034155046be8b5ee67" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/5/4/545eb96df3e21cf36363ebac0d6ba4b94c4a06aa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/6/2/6214fa54f78a1f720a13755f3f2e1fd2fa3df830" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/6/2/62215d0016d1e4f804a9a3a2d30e8e2ff7612346" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/8/1/815199190ff0da744ee58638a802a2fc49d006af" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/b/5/b520d90aa0f447f2f101d41a96fd736fdbdc542f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/b/8/b8e07366d9574b590783769a2df98f1fb2a68614" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/b/9/b9a0a351fc8ad4420a0da49362a929a0d79b524e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/d/6/d63028ced830a6acd9a4121de42e797b041b9864" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/f/a/fae8427504c2e3b84345d2a8c993ffe54029984e" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/1/3/13d1751a3d2e17e261a1b7857fae50bee30e1585" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/3/0/3094e3e8e72bceb5c6b864763ab6ef166007d43c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/3/0/30a9f695694d125652023001de07e63634b5e440" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/3/1/315116a2c8dcf3d2f32771af5308684ac3febd32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/3/f/3f413b9b0ffde544846b9b9d85d680950ff27328" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/4/f/4fc23bf432a0cc1c11eb04034155046be8b5ee67" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/5/4/545eb96df3e21cf36363ebac0d6ba4b94c4a06aa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/6/2/6214fa54f78a1f720a13755f3f2e1fd2fa3df830" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/6/2/62215d0016d1e4f804a9a3a2d30e8e2ff7612346" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/8/1/815199190ff0da744ee58638a802a2fc49d006af" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/b/5/b520d90aa0f447f2f101d41a96fd736fdbdc542f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/b/8/b8e07366d9574b590783769a2df98f1fb2a68614" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/b/9/b9a0a351fc8ad4420a0da49362a929a0d79b524e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/d/6/d63028ced830a6acd9a4121de42e797b041b9864" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/f/a/fae8427504c2e3b84345d2a8c993ffe54029984e" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.QRCommand.Api/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QRCommand.Api/Controllers/QRCodeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/Controllers/QRCodeGeneratorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QRCommand.Api/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QRCommand.Api/Models/CustomValidators/ValidRequestedVersionAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/Validators/ValidRequestedVersionAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QRCommand.Api/Models/QRCodeRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/Models/QRCodeGeneratorRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QRCommand.Api/Controllers/QRCodeGeneratorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/Controllers/QRCodeGeneratorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QRCommand.Api/Controllers/QRCodesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/Controllers/QRCodesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QRCommand.Api/Dtos/QrCodesDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/Dtos/QrCodesDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QRCommand.Api/Dtos/QrCodesResponseDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/Dtos/QrCodesResponseDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QRCommand.Api/Migrations/20240303105821_InitialCreate.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QRCommand.Api/Migrations/20240303105821_InitialCreate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QRCommand.Api/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QRCommand.Api/Models/Payloads/VCardPayload.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/Models/Payloads/VCardPayload.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QRCommand.Api/Models/QRCodeSchema.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/Models/QRCodeSchema.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QRCommand.Api/QRCommand.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/QRCommand.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QRCommand.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QRCommand.Api/bin/Debug/net8.0/QRCommand.Api.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/bin/Debug/net8.0/QRCommand.Api.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QRCommand.Api/Services/QrCodeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/Services/QrCodeService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/bin/Debug/net8.0/QRCommand.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/bin/Debug/net8.0/QRCommand.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/bin/Debug/net8.0/QRCommand.Api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/bin/Debug/net8.0/QRCommand.Api.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/bin/Debug/net8.0/QRCommand.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/bin/Debug/net8.0/QRCommand.Api.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/bin/Debug/net8.0/QRCommand.Api.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/bin/Debug/net8.0/QRCommand.Api.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QRCommand.Api/bin/Debug/net8.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/bin/Debug/net8.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/QRCommand.Api.xml" afterDir="false" />
@@ -41,8 +68,6 @@
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/ref/QRCommand.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/ref/QRCommand.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/refint/QRCommand.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/Debug/net8.0/refint/QRCommand.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/QRCommand.Api.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/QRCommand.Api.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/QRCommand.Api.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/QRCommand.Api.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/QRCommand.Api.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/QRCommand.Api.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/QRCommand.Api/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/QRCommand.Api/obj/project.packagespec.json" afterDir="false" />
@@ -60,11 +85,12 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/da7e9894ce22ef8cc02e5acc56e95a6f8cf8f644/src/Mvc/Mvc.Core/src/ContentResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/618169bd28a042f6a5ca3e70b26cc3fa1e600/a1/f2d52a01/QRCodeGenerator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Gus/RiderProjects/QRCommand.Api/QRCommand.Api/Controllers/QRCodesController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2d8IZ2Qsqw5JZ9DB7XK0AMfDXz7" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -73,27 +99,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.QRCommand.Api: http.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.QRCommand.Api: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/react-native-app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\Gus\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Gus\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\Gus\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Gus\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Gus\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Gus\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.QRCommand.Api: http">
     <configuration name="QRCommand.Api: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/QRCommand.Api/QRCommand.Api.csproj" />
@@ -149,7 +175,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709383332151</updated>
-      <workItem from="1709383334450" duration="30415000" />
+      <workItem from="1709383334450" duration="31599000" />
+      <workItem from="1709481859301" duration="3647000" />
+      <workItem from="1709582545547" duration="4206000" />
+      <workItem from="1709670070218" duration="1975000" />
+      <workItem from="1710108831972" duration="816000" />
+      <workItem from="1711058095024" duration="620000" />
+      <workItem from="1713785414797" duration="438000" />
     </task>
     <servers />
   </component>
@@ -158,5 +190,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/QRCommand.Api/Controllers/QRCodesController.cs</url>
+          <line>28</line>
+          <properties documentPath="C:\Users\Gus\RiderProjects\QRCommand.Api\QRCommand.Api\Controllers\QRCodesController.cs" initialLine="28" containingFunctionPresentation="Method 'CreateQrCode'">
+            <startOffsets>
+              <option value="916" />
+            </startOffsets>
+            <endOffsets>
+              <option value="964" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
