@@ -9,6 +9,16 @@ public class QrCodesResponseDto
     /// The ID of the QR code.
     /// </summary>
     public Guid Id { get; set; }
+    
+    /// <summary>
+    /// The Title of the QR code.
+    /// </summary>    
+    public string Title { get; set; }
+
+    /// <summary>
+    /// The description of the QR code.
+    /// </summary>
+    public string Description { get; set; }
 
     /// <summary>
     /// The content of the QR code.

@@ -265,8 +265,22 @@ public class QRCodeGeneratorController : ControllerBase
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
         var generator = new PayloadGenerator.ContactData(PayloadGenerator.ContactData.ContactOutputType.VCard3,
-            request.FirstName, request.LastName);
-        // Add other vCard fields as needed
+            request.FirstName,
+            request.LastName,
+            request.Nickname,
+            request.Phone,
+            request.MobilePhone,
+            request.WorkPhone,
+            request.Email,
+            request.Birthday,
+            request.Website,
+            request.Street,
+            request.HouseNumber,
+            request.City,
+            request.ZipCode,
+            request.Country,
+            request.Note,
+            request.StateRegion);
         var payload = generator.ToString();
         try
         {
@@ -282,6 +296,7 @@ public class QRCodeGeneratorController : ControllerBase
             return StatusCode(500, "Internal server error: " + ex.Message);
         }
     }
+
 
     /// <summary>
     /// Generates a QR code for sending an SMS.

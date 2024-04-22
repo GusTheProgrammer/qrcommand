@@ -11,8 +11,8 @@ using QRCommand.Api.Data;
 namespace QRCommand.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240303105821_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240304204648_InitialQRCodeDB")]
+    partial class InitialQRCodeDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -212,7 +212,7 @@ namespace QRCommand.Api.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("QRCommand.Api.Models.QrCode", b =>
+            modelBuilder.Entity("QRCommand.Api.Models.QRCodeSchema", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -225,8 +225,18 @@ namespace QRCommand.Api.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
                     b.Property<bool>("IsPublic")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("TEXT");
@@ -293,7 +303,7 @@ namespace QRCommand.Api.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("QRCommand.Api.Models.QrCode", b =>
+            modelBuilder.Entity("QRCommand.Api.Models.QRCodeSchema", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()

@@ -280,9 +280,76 @@
              <response code="200">Returns the QR code image</response>
              <response code="400">If the request is invalid</response>
         </member>
+        <member name="T:QRCommand.Api.Controllers.QrCodesController">
+            <summary>
+            Handles CRUD operations for QR codes.
+            </summary>
+        </member>
+        <member name="M:QRCommand.Api.Controllers.QrCodesController.#ctor(QRCommand.Api.Services.IQrCodeService,Microsoft.AspNetCore.Identity.UserManager{Microsoft.AspNetCore.Identity.IdentityUser})">
+            <summary>
+            Handles CRUD operations for QR codes.
+            </summary>
+        </member>
+        <member name="M:QRCommand.Api.Controllers.QrCodesController.CreateQrCode(QRCommand.Api.Dtos.QrCodesDto)">
+            <summary>
+            Creates a new QR code.
+            </summary>
+            <param name="qrCodesDto">The QR code data.</param>
+            <returns>The created QR code.</returns>
+            <response code="201">Returns the newly created QR code</response>
+            <response code="401">If the user is not authenticated</response>
+        </member>
+        <member name="M:QRCommand.Api.Controllers.QrCodesController.GetQrCode(System.Guid)">
+            <summary>
+            Retrieves a QR code by ID. Public QR codes are accessible without authentication.
+            </summary>
+            <param name="id">The ID of the QR code.</param>
+            <returns>The requested QR code if found.</returns>
+            <response code="200">Returns the requested QR code</response>
+            <response code="404">If the QR code is not found or not accessible</response>
+        </member>
+        <member name="M:QRCommand.Api.Controllers.QrCodesController.GetAllQrCodes">
+            <summary>
+            Retrieves all QR codes for the authenticated user.
+            </summary>
+            <returns>A list of QR codes owned by the user.</returns>
+            <response code="200">Returns the list of QR codes</response>
+            <response code="401">If the user is not authenticated</response>
+        </member>
+        <member name="M:QRCommand.Api.Controllers.QrCodesController.UpdateQrCode(System.Guid,QRCommand.Api.Dtos.QrCodesDto)">
+            <summary>
+            Updates an existing QR code.
+            </summary>
+            <param name="id">The ID of the QR code to update.</param>
+            <param name="qrCodesDto">The updated QR code data.</param>
+            <returns>A status indicating the result of the update operation.</returns>
+            <response code="204">If the QR code was successfully updated</response>
+            <response code="401">If the user is not authenticated</response>
+            <response code="404">If the QR code is not found or not owned by the user</response>
+        </member>
+        <member name="M:QRCommand.Api.Controllers.QrCodesController.DeleteQrCode(System.Guid)">
+            <summary>
+            Deletes a QR code.
+            </summary>
+            <param name="id">The ID of the QR code to delete.</param>
+            <returns>A status indicating the result of the delete operation.</returns>
+            <response code="204">If the QR code was successfully deleted</response>
+            <response code="401">If the user is not authenticated</response>
+            <response code="404">If the QR code is not found or not owned by the user</response>
+        </member>
         <member name="T:QRCommand.Api.Dtos.QrCodesDto">
             <summary>
             DTO for creating or updating a QR code.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Dtos.QrCodesDto.Title">
+            <summary>
+            The Title of the QR code.
+            </summary>    
+        </member>
+        <member name="P:QRCommand.Api.Dtos.QrCodesDto.Description">
+            <summary>
+            The description of the QR code.
             </summary>
         </member>
         <member name="P:QRCommand.Api.Dtos.QrCodesDto.Content">
@@ -303,6 +370,16 @@
         <member name="P:QRCommand.Api.Dtos.QrCodesResponseDto.Id">
             <summary>
             The ID of the QR code.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Dtos.QrCodesResponseDto.Title">
+            <summary>
+            The Title of the QR code.
+            </summary>    
+        </member>
+        <member name="P:QRCommand.Api.Dtos.QrCodesResponseDto.Description">
+            <summary>
+            The description of the QR code.
             </summary>
         </member>
         <member name="P:QRCommand.Api.Dtos.QrCodesResponseDto.Content">
@@ -330,16 +407,16 @@
             The last update date and time of the QR code.
             </summary>
         </member>
-        <member name="T:QRCommand.Api.Migrations.InitialCreate">
+        <member name="T:QRCommand.Api.Migrations.InitialQRCodeDB">
             <inheritdoc />
         </member>
-        <member name="M:QRCommand.Api.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:QRCommand.Api.Migrations.InitialQRCodeDB.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:QRCommand.Api.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:QRCommand.Api.Migrations.InitialQRCodeDB.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:QRCommand.Api.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:QRCommand.Api.Migrations.InitialQRCodeDB.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="T:QRCommand.Api.Models.Payloads.BookmarkPayload">
@@ -562,14 +639,74 @@
             The last name of the contact.
             </summary>
         </member>
-        <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.PhoneNumber">
+        <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.Nickname">
+            <summary>
+            The nickname or display name of the contact.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.Phone">
             <summary>
             The phone number of the contact.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.MobilePhone">
+            <summary>
+            The mobile phone number of the contact.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.WorkPhone">
+            <summary>
+            The work phone number of the contact.
             </summary>
         </member>
         <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.Email">
             <summary>
             The email address of the contact.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.Birthday">
+            <summary>
+            The birthday of the contact.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.Website">
+            <summary>
+            The website or homepage of the contact.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.Street">
+            <summary>
+            The street address of the contact.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.HouseNumber">
+            <summary>
+            The house number of the contact's address.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.City">
+            <summary>
+            The city of the contact's address.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.ZipCode">
+            <summary>
+            The ZIP code of the contact's address.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.Country">
+            <summary>
+            The country of the contact's address.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.Note">
+            <summary>
+            Additional notes or memo text for the contact.
+            </summary>
+        </member>
+        <member name="P:QRCommand.Api.Models.Payloads.VCardPayload.StateRegion">
+            <summary>
+            The state or region of the contact's address.
             </summary>
         </member>
         <member name="T:QRCommand.Api.Models.Payloads.WhatsAppMessagePayload">
@@ -606,58 +743,6 @@
             <summary>
             Indicates whether the network uses WPA/WPA2 security.
             </summary>
-        </member>
-        <member name="T:QRCodesController">
-            <summary>
-            Handles CRUD operations for QR codes.
-            </summary>
-        </member>
-        <member name="M:QRCodesController.CreateQRCode(QRCommand.Api.Dtos.QrCodesDto)">
-            <summary>
-            Creates a new QR code.
-            </summary>
-            <param name="qrCodesDto">The QR code data.</param>
-            <returns>The created QR code.</returns>
-            <response code="201">Returns the newly created QR code</response>
-            <response code="401">If the user is not authenticated</response>
-        </member>
-        <member name="M:QRCodesController.GetQRCode(System.Guid)">
-            <summary>
-            Retrieves a QR code by ID. Public QR codes are accessible without authentication.
-            </summary>
-            <param name="id">The ID of the QR code.</param>
-            <returns>The requested QR code if found.</returns>
-            <response code="200">Returns the requested QR code</response>
-            <response code="404">If the QR code is not found or not accessible</response>
-        </member>
-        <member name="M:QRCodesController.GetAllQRCodes">
-            <summary>
-            Retrieves all QR codes for the authenticated user.
-            </summary>
-            <returns>A list of QR codes owned by the user.</returns>
-            <response code="200">Returns the list of QR codes</response>
-            <response code="401">If the user is not authenticated</response>
-        </member>
-        <member name="M:QRCodesController.UpdateQRCode(System.Guid,QRCommand.Api.Dtos.QrCodesDto)">
-            <summary>
-            Updates an existing QR code.
-            </summary>
-            <param name="id">The ID of the QR code to update.</param>
-            <param name="qrCodesDto">The updated QR code data.</param>
-            <returns>A status indicating the result of the update operation.</returns>
-            <response code="204">If the QR code was successfully updated</response>
-            <response code="401">If the user is not authenticated</response>
-            <response code="404">If the QR code is not found or not owned by the user</response>
-        </member>
-        <member name="M:QRCodesController.DeleteQRCode(System.Guid)">
-            <summary>
-            Deletes a QR code.
-            </summary>
-            <param name="id">The ID of the QR code to delete.</param>
-            <returns>A status indicating the result of the delete operation.</returns>
-            <response code="204">If the QR code was successfully deleted</response>
-            <response code="401">If the user is not authenticated</response>
-            <response code="404">If the QR code is not found or not owned by the user</response>
         </member>
     </members>
 </doc>

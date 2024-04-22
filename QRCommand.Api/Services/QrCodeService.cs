@@ -21,6 +21,8 @@ namespace QRCommand.Api.Services
         {
             var qrCode = new QRCodeSchema
             {
+                Title = qrCodesDto.Title,
+                Description = qrCodesDto.Description,
                 Content = qrCodesDto.Content,
                 IsPublic = qrCodesDto.IsPublic,
                 UserId = userId,
@@ -39,6 +41,8 @@ namespace QRCommand.Api.Services
                 .Select(q => new QrCodesResponseDto
                 {
                     Id = q.Id,
+                    Title = q.Title,
+                    Description = q.Description,
                     Content = q.Content,
                     IsPublic = q.IsPublic,
                     UserId = q.UserId,
@@ -58,6 +62,8 @@ namespace QRCommand.Api.Services
                 .Select(q => new QrCodesResponseDto
                 {
                     Id = q.Id,
+                    Title = q.Title,
+                    Description = q.Description,
                     Content = q.Content,
                     IsPublic = q.IsPublic,
                     UserId = q.UserId,
@@ -80,7 +86,8 @@ namespace QRCommand.Api.Services
             {
                 return false;
             }
-
+            qrCode.Title = qrCodesDto.Title;
+            qrCode.Description = qrCodesDto.Description;
             qrCode.Content = qrCodesDto.Content;
             qrCode.IsPublic = qrCodesDto.IsPublic;
             qrCode.UpdatedAt = DateTime.UtcNow;
