@@ -2,10 +2,6 @@
 
 using QRCoder;
 using System;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 using QRCommand.Api.Models;
 
@@ -20,14 +16,7 @@ public class QRCodeGeneratorService : IQrCodeGeneratorService
 
             switch (renderType)
             {
-                case RenderType.Image:
-                    using (var qrCode = new QRCode(qrCodeData))
-                    {
-                        using var qrCodeImage = qrCode.GetGraphic(20);
-                        using var ms = new MemoryStream();
-                        qrCodeImage.Save(ms, ImageFormat.Png);
-                        return "data:image/png;base64," + Convert.ToBase64String(ms.ToArray());
-                    }
+
 
                 case RenderType.Svg:
                     var qrCodeSvg = new SvgQRCode(qrCodeData);
@@ -41,16 +30,7 @@ public class QRCodeGeneratorService : IQrCodeGeneratorService
                     var qrCodeAscii = new AsciiQRCode(qrCodeData);
                     return qrCodeAscii.GetGraphic(1);
 
-                case RenderType.Pdf:
-                    using (var qrCode = new QRCode(qrCodeData))
-                    {
-                        using var qrCodeImage = qrCode.GetGraphic(20);
-                        using var ms = new MemoryStream();
-                        qrCodeImage.Save(ms,
-                            ImageFormat
-                                .Png); // PDF generation would typically be more complex and require a separate library
-                        return "data:application/pdf;base64," + Convert.ToBase64String(ms.ToArray());
-                    }
+             
 
                 default:
                     throw new ArgumentException("Unsupported render type.");

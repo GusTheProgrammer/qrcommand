@@ -1,9 +1,7 @@
-﻿using System.Drawing;
-using QRCommand.Api.Models;
+﻿using QRCommand.Api.Models;
 using QRCommand.Api.Models.Payloads;
 using Microsoft.AspNetCore.Mvc;
 using QRCoder;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Text;
 using Microsoft.AspNetCore.Authorization;
