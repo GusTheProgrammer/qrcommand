@@ -1,21 +1,27 @@
-import React from "react";
-import { ScrollView, View } from "react-native";
+import React, { useEffect } from "react";
+import { Alert, ScrollView, View } from "react-native";
 import { useForm } from "react-hook-form";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Input } from "~/components/ui/input";
 import { Text } from "~/components/ui/text";
 import useAxios from "~/hooks/useAxios";
-import * as ToastPrimitive from "~/components/primitives/toast";
 import { Portal } from "~/components/primitives/portal";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button } from "./ui/button";
 import { Label } from "./ui/label";
 import { H1, Muted } from "./ui/typography";
+import { useAuth } from "~/hooks/useAuth";
+import { router } from "expo-router";
 
 export function LoginForm() {
+  const isAuthenticated = useAuth();
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push("/(tabs)/qrCodes");
+    }
+  }, [isAuthenticated]);
   const scrollRef = React.useRef<ScrollView>(null);
-  const [open, setOpen] = React.useState(false);
-  const [toastMessage, setToastMessage] = React.useState("");
   const insets = useSafeAreaInsets();
 
   const {
@@ -41,8 +47,6 @@ export function LoginForm() {
         data: data,
       });
 
-      console.log("###### API response:", response); // Debug: Check the API response
-
       if (response && !response.error) {
         const { tokenType, accessToken, expiresIn, refreshToken } = response;
         await AsyncStorage.multiSet([
@@ -51,18 +55,16 @@ export function LoginForm() {
           ["expiresIn", JSON.stringify(expiresIn)],
           ["refreshToken", refreshToken],
         ]);
-        setToastMessage("Login successful!");
-        setOpen(true);
-        console.log("Login successful and tokens stored.");
+        Alert.alert("Login successful", "You have been logged in.");
+        router.replace("/(tabs)/qrCodes");
       }
     } catch (error) {
       console.error("Login failed:", error);
       if (error.response && error.response.status === 401) {
-        setToastMessage("Credentials are incorrect.");
+        Alert.alert("Login Error", "Credentials are incorrect.");
       } else {
-        setToastMessage(`Failed to log in. ${error.message}`);
+        Alert.alert("Login Error", `Failed to log in: ${error.message}`);
       }
-      setOpen(true);
     }
   };
 
@@ -85,28 +87,6 @@ export function LoginForm() {
 
   return (
     <>
-      {open && (
-        <Portal name="toast-example">
-          <View
-            style={{ bottom: insets.bottom + 4 }}
-            className="px-4 absolute w-full"
-          >
-            <ToastPrimitive.Root
-              type="foreground"
-              open={open}
-              onOpenChange={setOpen}
-              className="opacity-95 bg-secondary border-border flex-row justify-between items-center p-4 rounded-xl"
-            >
-              <ToastPrimitive.Title className="text-foreground text-lg">
-                {toastMessage}
-              </ToastPrimitive.Title>
-              <ToastPrimitive.Close className="border border-primary px-4 py-2">
-                <Text className="text-foreground">Close</Text>
-              </ToastPrimitive.Close>
-            </ToastPrimitive.Root>
-          </View>
-        </Portal>
-      )}
       <ScrollView
         ref={scrollRef}
         contentContainerClassName="p-6 mx-auto w-full max-w-xl"

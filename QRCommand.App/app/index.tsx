@@ -12,7 +12,6 @@ export default function Tab() {
   return (
     <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
       <LoginForm />
-      <Text>Tab [Home|sd]</Text>
     </View>
   );
 }

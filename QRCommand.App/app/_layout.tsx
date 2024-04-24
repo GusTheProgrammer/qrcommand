@@ -5,11 +5,13 @@ import { Theme, ThemeProvider } from "@react-navigation/native";
 import { SplashScreen, Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import * as React from "react";
-import { Platform } from "react-native";
+import { Platform, View } from "react-native";
 import { NAV_THEME } from "~/lib/constants";
 import { useColorScheme } from "~/lib/useColorScheme";
 import { PortalHost } from "~/components/primitives/portal";
 import { ThemeToggle } from "~/components/ThemeToggle";
+import LogoutButton from "~/components/LogoutButton";
+import { useAuth } from "~/hooks/useAuth";
 
 const LIGHT_THEME: Theme = {
   dark: false,
@@ -31,6 +33,7 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const { colorScheme, setColorScheme, isDarkColorScheme } = useColorScheme();
   const [isColorSchemeLoaded, setIsColorSchemeLoaded] = React.useState(false);
+  const isAuthenticated = useAuth();
 
   React.useEffect(() => {
     (async () => {
@@ -69,7 +72,14 @@ export default function RootLayout() {
           name="(tabs)"
           options={{
             title: "QR Command",
-            headerRight: () => <ThemeToggle />,
+            headerRight: () => (
+              <>
+                <View className="flex-row items-center gap-4">
+                  <ThemeToggle />
+                  {isAuthenticated && <LogoutButton />}
+                </View>
+              </>
+            ),
           }}
         />
       </Stack>
