@@ -81,13 +81,19 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+  
 }
 
-// app.UseHttpsRedirection();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
+
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseAuthorization();
 app.MapIdentityApi<IdentityUser>();
 app.MapControllers();
+app.UseForwardedHeaders();
 
 app.Run();
