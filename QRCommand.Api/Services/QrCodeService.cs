@@ -24,6 +24,7 @@ namespace QRCommand.Api.Services
                 Title = qrCodesDto.Title,
                 Description = qrCodesDto.Description,
                 Content = qrCodesDto.Content,
+                Type = qrCodesDto.Type, 
                 IsPublic = qrCodesDto.IsPublic,
                 UserId = userId,
                 CreatedAt = DateTime.UtcNow
@@ -65,6 +66,7 @@ namespace QRCommand.Api.Services
                     Title = q.Title,
                     Description = q.Description,
                     Content = q.Content,
+                    Type = q.Type, 
                     IsPublic = q.IsPublic,
                     UserId = q.UserId,
                     CreatedAt = q.CreatedAt,
@@ -89,6 +91,7 @@ namespace QRCommand.Api.Services
             qrCode.Title = qrCodesDto.Title;
             qrCode.Description = qrCodesDto.Description;
             qrCode.Content = qrCodesDto.Content;
+            qrCode.Type = qrCodesDto.Type; // Update the QrCodeType field
             qrCode.IsPublic = qrCodesDto.IsPublic;
             qrCode.UpdatedAt = DateTime.UtcNow;
 

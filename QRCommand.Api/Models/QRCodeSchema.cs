@@ -18,6 +18,10 @@ public class QRCodeSchema
 
     [Required(ErrorMessage = "Content is required.")]
     public string Content { get; set; } // The data encoded in the QR code
+    
+    [Required(ErrorMessage = "QR Code Type is required.")]
+    [StringLength(50, ErrorMessage = "QR Code Type cannot be longer than 50 characters.")]
+    public string Type { get; set; } // Type of the QR code
 
     public bool IsPublic { get; set; } = false; // Private by default
 

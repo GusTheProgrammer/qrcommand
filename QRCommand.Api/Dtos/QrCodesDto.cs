@@ -26,6 +26,14 @@ public class QrCodesDto
     /// </summary>
     [Required(ErrorMessage = "Content is required")]
     public string Content { get; set; }
+    
+    /// <summary>
+    ///  The type of the QR code.
+    /// </summary>
+    [Required(ErrorMessage = "QR Code Type is required")]
+    [StringLength(50, ErrorMessage = "QR Code Type cannot be longer than 50 characters.")]
+    public string Type { get; set; } // Type of the QR code
+
 
     /// <summary>
     /// Indicates whether the QR code is public.

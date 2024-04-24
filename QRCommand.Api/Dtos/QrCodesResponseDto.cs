@@ -9,7 +9,7 @@ public class QrCodesResponseDto
     /// The ID of the QR code.
     /// </summary>
     public Guid Id { get; set; }
-    
+
     /// <summary>
     /// The Title of the QR code.
     /// </summary>    
@@ -24,6 +24,11 @@ public class QrCodesResponseDto
     /// The content of the QR code.
     /// </summary>
     public string Content { get; set; }
+
+    /// <summary>
+    /// The type of the QR Code.
+    /// </summary>
+    public string Type { get; set; }
 
     /// <summary>
     /// Indicates whether the QR code is public.
