@@ -51,7 +51,7 @@ export function QrCodeCard({ data, onRefresh }) {
 
   const typeColorMap = {
     email: "bg-indigo-500",
-    url: "bg-gray-800",
+    url: "bg-gray-600",
     text: "bg-red-500",
     wifi: "bg-orange-500",
     sms: "bg-yellow-500",

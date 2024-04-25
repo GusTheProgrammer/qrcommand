@@ -54,9 +54,9 @@ export function RegisterForm() {
 
       Alert.alert(
         "Registration successful",
-        "You have been registered and logged in."
+        "You have been registered successfully. Please log in to continue."
       );
-      router.replace("/(tabs)/qrCodes");
+      router.replace("/");
     } catch (error) {
       console.error("Registration failed:", error);
 
