@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Alert, ScrollView, View } from "react-native";
 import { useForm } from "react-hook-form";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -15,12 +15,13 @@ import { router } from "expo-router";
 
 export function LoginForm() {
   const isAuthenticated = useAuth();
+  const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
     if (!isAuthenticated) {
       router.push("/(tabs)/qrCodes");
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, loggedIn]);
   const scrollRef = React.useRef<ScrollView>(null);
   const insets = useSafeAreaInsets();
 
@@ -37,7 +38,7 @@ export function LoginForm() {
     },
   });
 
-  const { fetchData } = useAxios("http://10.0.2.2:5083");
+  const { fetchData } = useAxios("http://165.22.124.130");
 
   const onSubmit = async (data: any) => {
     try {
@@ -56,6 +57,7 @@ export function LoginForm() {
           ["refreshToken", refreshToken],
         ]);
         Alert.alert("Login successful", "You have been logged in.");
+        setLoggedIn(true);
         router.replace("/(tabs)/qrCodes");
       }
     } catch (error) {
@@ -96,7 +98,7 @@ export function LoginForm() {
       >
         <H1 className="text-center mb-6">Login</H1>
         <View className="flex-1 justify-center p-5 gap-">
-          <View className="w-64">
+          <View className="w-64 mb-5">
             <Label nativeID="email">Email</Label>
 
             <Input
@@ -115,7 +117,7 @@ export function LoginForm() {
             )}
           </View>
 
-          <View className="w-64">
+          <View className="w-64 mb-5">
             <Label nativeID="password">Password</Label>
             <Input
               id="password"
@@ -139,6 +141,16 @@ export function LoginForm() {
           >
             <Text>Submit</Text>
           </Button>
+
+          <Muted className="text-center mt-4">
+            Don't have an account?{" "}
+            <Text
+              onPress={() => router.replace("/register")}
+              className="text-blue-500"
+            >
+              Register
+            </Text>
+          </Muted>
         </View>
       </ScrollView>
     </>

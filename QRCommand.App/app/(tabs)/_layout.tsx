@@ -9,7 +9,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="qrCodes"
         options={{
-          title: "QR Codes ",
+          title: "QR Codes",
           headerShown: false,
           tabBarIcon: ({ color }) => <QrCode size={28} color={color} />,
         }}

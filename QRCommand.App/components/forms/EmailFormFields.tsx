@@ -13,7 +13,7 @@ const EmailFormFields = ({ setValue }) => (
       />
     </View>
     <View className="mb-5">
-      <Label nativeID="subject">Subject</Label>
+      <Label nativeID="subject">Email Subject</Label>
       <Input
         id="subject"
         onChangeText={(text) => setValue("subject", text)}
@@ -21,7 +21,7 @@ const EmailFormFields = ({ setValue }) => (
       />
     </View>
     <View className="mb-5">
-      <Label nativeID="message">Message</Label>
+      <Label nativeID="message">Email Message</Label>
       <Input
         id="message"
         onChangeText={(text) => setValue("message", text)}

@@ -2,7 +2,7 @@ import { View } from "react-native";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
-const SmsFormFields = ({ setValue }) => (
+const WhatsAppFormFields = ({ setValue }) => (
   <>
     <View className="mb-5">
       <Label nativeID="phoneNumber">Phone Number</Label>
@@ -13,7 +13,7 @@ const SmsFormFields = ({ setValue }) => (
       />
     </View>
     <View className="mb-5">
-      <Label nativeID="message">SMS Message</Label>
+      <Label nativeID="message">Message</Label>
       <Input
         id="message"
         onChangeText={(text) => setValue("message", text)}
@@ -23,4 +23,4 @@ const SmsFormFields = ({ setValue }) => (
   </>
 );
 
-export default SmsFormFields;
+export default WhatsAppFormFields;

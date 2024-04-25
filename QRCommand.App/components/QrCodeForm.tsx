@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { ScrollView, View, Text } from "react-native";
+import { ScrollView, View, Text, Alert } from "react-native";
 import { useForm } from "react-hook-form";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 import { Switch } from "~/components/ui/switch";
 import useAxios from "~/hooks/useAxios";
-import * as ToastPrimitive from "~/components/primitives/toast";
-import { Portal } from "~/components/primitives/portal";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button } from "./ui/button";
 import { H1 } from "./ui/typography";
@@ -23,6 +21,11 @@ import EmailFormFields from "./forms/EmailFormFields";
 import SmsFormFields from "./forms/SmsFormFields";
 import WifiFormFields from "./forms/WifiFormFields";
 import { Option } from "./primitives/select";
+import { router } from "expo-router";
+import TextFormFields from "./forms/TextFormFields";
+import GeolocationFormFields from "./forms/GeolocationFormFields";
+import WhatsAppFormFields from "./forms/WhatsAppFormFields";
+import UrlFormFields from "./forms/UrlFormFields";
 
 export function QrCodeForm() {
   const {
@@ -42,9 +45,7 @@ export function QrCodeForm() {
   });
   const [selectedType, setSelectedType] = useState("text");
   const [isPublic, setIsPublic] = useState(true);
-  const { fetchData } = useAxios("http://10.0.2.2:5083");
-  const [open, setOpen] = useState(false);
-  const [toastMessage, setToastMessage] = useState("");
+  const { fetchData } = useAxios("http://165.22.124.130");
   const insets = useSafeAreaInsets();
   const contentInsets = {
     top: insets.top,
@@ -54,7 +55,10 @@ export function QrCodeForm() {
   };
 
   const onSubmit = async (data) => {
-    const typeSpecificEndpoint = `/api/QRCodeGenerator/create/${selectedType.toLowerCase()}`;
+    const isTextType = selectedType.toLowerCase() === "text";
+    const typeSpecificEndpoint = isTextType
+      ? `/api/qrcodegenerator/create` // Specific endpoint for 'text' type
+      : `/api/QRCodeGenerator/create/${selectedType.toLowerCase()}`;
 
     const requestData = { ...data };
     delete requestData.title;
@@ -85,8 +89,8 @@ export function QrCodeForm() {
         });
 
         if (saveResponse && !saveResponse.error) {
-          setToastMessage("QR Code created successfully!");
-          setOpen(true);
+          Alert.alert("Success", "QR Code created successfully.");
+          router.replace("/(tabs)/qrCodes");
         } else {
           throw new Error("Failed to save QR Code.");
         }
@@ -95,8 +99,7 @@ export function QrCodeForm() {
         throw new Error("Failed to generate QR Code.");
       }
     } catch (error) {
-      setToastMessage(`Operation failed: ${error.message}`);
-      setOpen(true);
+      Alert.alert("Error", `Operation failed: ${error.message}`);
     }
   };
 
@@ -113,27 +116,6 @@ export function QrCodeForm() {
 
   return (
     <>
-      {open && (
-        <Portal name="qr-form-toast">
-          <View
-            style={{ bottom: insets.bottom + 4 }}
-            className="absolute w-full px-4"
-          >
-            <ToastPrimitive.Root
-              open={open}
-              onOpenChange={setOpen}
-              className="bg-secondary border p-4 rounded-xl justify-between"
-            >
-              <ToastPrimitive.Title className="text-lg">
-                {toastMessage}
-              </ToastPrimitive.Title>
-              <ToastPrimitive.Close className="px-4 py-2 border">
-                <Text>Close</Text>
-              </ToastPrimitive.Close>
-            </ToastPrimitive.Root>
-          </View>
-        </Portal>
-      )}
       <ScrollView
         contentContainerStyle={{ padding: 20, justifyContent: "center" }}
         showsVerticalScrollIndicator={false}
@@ -153,7 +135,7 @@ export function QrCodeForm() {
                 placeholder="Select a Type"
               />
             </SelectTrigger>
-            <SelectContent insets={contentInsets} className="w-[250px]">
+            <SelectContent insets={contentInsets} className="w-[250px] ">
               <SelectGroup>
                 <SelectLabel>Type</SelectLabel>
                 <SelectItem label="Text" value="text">
@@ -168,11 +150,14 @@ export function QrCodeForm() {
                 <SelectItem label="URL" value="url">
                   URL
                 </SelectItem>
-                <SelectItem label="Bookmark" value="bookmark">
-                  Bookmark
-                </SelectItem>
                 <SelectItem label="Email" value="email">
                   Email
+                </SelectItem>
+                <SelectItem label="WhatAapp" value="whatsapp">
+                  WhatsApp
+                </SelectItem>
+                <SelectItem label="Geolocation" value="geolocation">
+                  Geolocation
                 </SelectItem>
               </SelectGroup>
             </SelectContent>
@@ -180,7 +165,7 @@ export function QrCodeForm() {
         </View>
 
         <View className="mb-5">
-          <Label nativeID="title">Title</Label>
+          <Label nativeID="title">Qr Code Title</Label>
           <Input
             id="title"
             onChangeText={(text) => setValue("title", text)}
@@ -188,7 +173,7 @@ export function QrCodeForm() {
           />
         </View>
         <View className="mb-5">
-          <Label nativeID="description">Description</Label>
+          <Label nativeID="description">QR Code Description</Label>
           <Input
             id="description"
             onChangeText={(text) => setValue("description", text)}
@@ -201,6 +186,14 @@ export function QrCodeForm() {
         )}
         {selectedType === "email" && <EmailFormFields setValue={setValue} />}
         {selectedType === "sms" && <SmsFormFields setValue={setValue} />}
+        {selectedType === "url" && <UrlFormFields setValue={setValue} />}
+        {selectedType === "geolocation" && (
+          <GeolocationFormFields setValue={setValue} />
+        )}
+        {selectedType === "whatsapp" && (
+          <WhatsAppFormFields setValue={setValue} />
+        )}
+        {selectedType === "text" && <TextFormFields setValue={setValue} />}
 
         <View className="mb-5 flex-row items-center justify-between">
           <Label nativeID="isPublic">Is Public?</Label>

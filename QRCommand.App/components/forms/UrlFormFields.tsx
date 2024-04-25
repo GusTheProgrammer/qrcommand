@@ -1,18 +1,16 @@
-import React from 'react';
-import { Input } from "~/components/ui/input";
-import { useFormContext } from "react-hook-form";
+import { View } from "react-native";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 
-export function UrlForm() {
-  const { register, setValue } = useFormContext();
-
-  React.useEffect(() => {
-    register('url');
-  }, [register]);
-
-  return (
+const UrlFormFields = ({ setValue }) => (
+  <View className="mb-5">
+    <Label nativeID="url">URL</Label>
     <Input
-      onChangeText={text => setValue("url", text)}
-      placeholder="URL"
+      id="url"
+      onChangeText={(text) => setValue("url", text)}
+      placeholder="Enter URL"
     />
-  );
-}
+  </View>
+);
+
+export default UrlFormFields;

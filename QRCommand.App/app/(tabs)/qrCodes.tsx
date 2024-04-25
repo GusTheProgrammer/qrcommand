@@ -1,3 +1,4 @@
+import { useIsFocused } from "@react-navigation/native";
 import { router } from "expo-router";
 import { LogOut } from "lucide-react-native";
 import React, { useEffect, useState } from "react";
@@ -16,10 +17,11 @@ import useAxios from "~/hooks/useAxios";
 
 export default function qrCodes() {
   const { fetchData, response, loading, error } = useAxios(
-    "http://10.0.2.2:5083"
+    "http://165.22.124.130"
   );
   const [refreshing, setRefreshing] = useState(false);
   const { isAuthenticated, setIsAuthenticated } = useAuth();
+  const isFocused = useIsFocused();
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -30,10 +32,16 @@ export default function qrCodes() {
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
-    fetchData({ url: "/api/qrcodes", method: "get" }).then(() =>
+    fetchData({ url: "/api/qrcodes", method: "get" }).finally(() =>
       setRefreshing(false)
     );
-  }, []);
+  }, [fetchData]);
+
+  useEffect(() => {
+    if (isFocused) {
+      onRefresh();
+    }
+  }, [isFocused]);
 
   if (loading)
     return (
@@ -70,17 +78,27 @@ export default function qrCodes() {
     );
   }
 
+  const sortedResponse = response
+    ? [...response].sort((a, b) => {
+        const dateA = new Date(a.updatedAt || a.createdAt);
+        const dateB = new Date(b.updatedAt || b.createdAt);
+        return dateB - dateA; // Sort by descending order
+      })
+    : [];
+
   return (
     <ScrollView
       refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }
     >
-      <LogOut />
-
-      {response &&
-        response.map((item, index) => (
-          <QrCodeCard key={item.id || index} data={item} />
+      {sortedResponse &&
+        sortedResponse.map((item, index) => (
+          <QrCodeCard
+            key={item.id || index}
+            data={item}
+            onRefresh={onRefresh}
+          />
         ))}
     </ScrollView>
   );

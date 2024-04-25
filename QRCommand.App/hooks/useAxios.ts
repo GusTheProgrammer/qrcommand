@@ -68,6 +68,18 @@ const useAxios = (baseURL: string) => {
     headers = {},
     params = {},
   }) => {
+    console.log(
+      "Fetching data from",
+      url,
+      "with method",
+      method,
+      "and data",
+      data,
+      "and headers",
+      headers,
+      "and params",
+      params
+    );
     setLoading(true);
     try {
       const result = await axiosInstance({
